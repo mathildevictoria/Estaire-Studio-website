@@ -1,0 +1,6 @@
+# Lokale backups af tidligere versioner - skal ikke offentliggores
+index-gammel-backup.html
+index-v1-backup.html
+index-v2-backup.html
+
+.DS_Store
