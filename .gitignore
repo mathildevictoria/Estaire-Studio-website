@@ -2,5 +2,9 @@
 index-gammel-backup.html
 index-v1-backup.html
 index-v2-backup.html
+index-v3-backup.html
 
 .DS_Store
+
+# Originale, ukomprimerede filer - siden bruger de komprimerede versioner
+*-original.*
