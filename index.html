@@ -203,6 +203,18 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .contact .lede{margin:18px auto 0}
 .contact .hero-actions{margin-top:32px}
 
+/* ---------- Cookie-banner ---------- */
+.cookie{position:fixed;left:24px;bottom:24px;z-index:60;max-width:400px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 24px 60px -24px rgba(23,19,20,.35);opacity:0;transform:translateY(16px);transition:opacity .4s var(--ease),transform .4s var(--ease);pointer-events:none}
+.cookie.show{opacity:1;transform:none;pointer-events:auto}
+.cookie h2{margin:0;font-size:16px;font-weight:600;letter-spacing:-.01em}
+.cookie p{margin-top:8px;color:var(--muted);font-size:14px;line-height:1.55}
+.cookie-actions{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.cookie-actions .btn{height:40px;padding:0 18px;font-size:14px}
+.cookie-link{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.cookie-link:hover{color:var(--ink)}
+@media (max-width:520px){.cookie{left:12px;right:12px;bottom:12px;max-width:none;padding:18px}.cookie-actions .btn{flex:1;justify-content:center}}
+@media (prefers-reduced-motion:reduce){.cookie{transition:none}}
+
 /* ---------- Footer ---------- */
 .site-footer{margin-top:128px;border-top:1px solid var(--line)}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-top:64px;padding-bottom:48px}
@@ -479,7 +491,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   </div>
   <div class="wrap footer-base">
     <span>© <span id="year">2026</span> Estaire Studio</span>
-    <span>Estaire Studio · AI content</span>
+    <span><button class="cookie-link" type="button" id="cookie-settings">Cookie settings</button> · Estaire Studio · AI content</span>
   </div>
   <div class="wrap footer-legal">
     <h4>Concept work / Spec work</h4>
@@ -487,6 +499,16 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <p>These projects are not commissioned, sponsored, endorsed or affiliated with the brands shown unless explicitly stated otherwise.</p>
   </div>
 </footer>
+
+<!-- ============ Cookie-banner ============ -->
+<div class="cookie" id="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-text" hidden>
+  <h2 id="cookie-title">We value your privacy</h2>
+  <p id="cookie-text">We use cookies to give you the best experience. Necessary cookies are always on; any others are only used if you accept.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-dark" type="button" data-consent="all">Accept all</button>
+    <button class="btn btn-line" type="button" data-consent="necessary">Only necessary</button>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -596,6 +618,22 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   collage.addEventListener('pointercancel',endDrag);
   if('IntersectionObserver' in window)new IntersectionObserver(function(e){cVisible=e[0].isIntersecting;cLast=performance.now()}).observe(collage);
   requestAnimationFrame(colFrame);
+
+  // Cookie-samtykke. Valget gemmes i localStorage ('all' eller 'necessary').
+  // Analyse/marketing-scripts skal KUN indlaeses naar valget er 'all':
+  //   window.addEventListener('estaire:consent',function(e){ if(e.detail==='all'){ /* indlaes fx analytics her */ } });
+  var KEY='estaire-cookie-consent',banner=document.getElementById('cookie');
+  function getConsent(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+  function applyConsent(v){window.estaireConsent=v;window.dispatchEvent(new CustomEvent('estaire:consent',{detail:v}))}
+  function showBanner(){banner.hidden=false;requestAnimationFrame(function(){banner.classList.add('show')})}
+  function hideBanner(){banner.classList.remove('show');setTimeout(function(){banner.hidden=true},400)}
+  banner.querySelectorAll('[data-consent]').forEach(function(b){b.addEventListener('click',function(){
+    var v=b.getAttribute('data-consent');try{localStorage.setItem(KEY,v)}catch(e){}
+    applyConsent(v);hideBanner();
+  })});
+  document.getElementById('cookie-settings').addEventListener('click',showBanner);
+  var saved=getConsent();
+  if(saved)applyConsent(saved);else setTimeout(showBanner,800);
 
   // Reveal on scroll
   var els=document.querySelectorAll('.reveal');
