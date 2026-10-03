@@ -195,6 +195,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .service .num{font-size:12px;font-weight:600;letter-spacing:.18em;color:var(--accent-deep)}
 .service h3{margin-top:14px;font-size:22px;font-weight:600;line-height:1.2}
 .service .desc{margin-top:12px;color:var(--muted);font-size:15px}
+.currency{margin:40px auto 0;width:max-content;display:flex;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
+.currency button{min-width:52px;height:40px;padding:0 14px;border-radius:999px;font-size:15px;font-weight:600;color:var(--muted);transition:background .25s,color .25s}
+.currency button:hover{color:var(--ink)}
+.currency button[aria-pressed="true"]{background:var(--accent-deep);color:#fff}
+.currency+.services{margin-top:24px}
 .service .price{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px}
 .service .price strong{font-size:26px;font-weight:600;letter-spacing:-.02em;white-space:nowrap}
 .service .price span{color:var(--muted);font-size:14px}
@@ -452,12 +457,17 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <p class="lede center">From standalone AI content to ongoing social media management, start with one service, combine them, or let us build the right setup around your brand.</p>
   </div>
   <div class="wrap">
+    <div class="currency reveal" role="group" aria-label="Show prices in">
+      <button type="button" data-cur="usd" aria-pressed="true" aria-label="US dollars">$</button>
+      <button type="button" data-cur="eur" aria-pressed="false" aria-label="Euro">€</button>
+      <button type="button" data-cur="dkk" aria-pressed="false" aria-label="Danish kroner">kr.</button>
+    </div>
     <div class="services">
       <article class="service reveal">
         <p class="num">01</p>
         <h3>Content repurposing</h3>
         <p class="desc">Send us the content you already have. We turn your webinars, videos, photos, newsletters, interviews and posts into fresh social content you can keep using.</p>
-        <div class="price"><strong>From $750</strong><span>per month</span></div>
+        <div class="price"><strong data-usd="From $750" data-eur="From €650" data-dkk="From 5.000 kr.">From $750</strong><span>per month</span></div>
         <ul class="points">
           <li>Turn existing content into new posts</li>
           <li>From webinars, old posts, images &amp; more</li>
@@ -473,7 +483,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p class="num">02</p>
         <h3>AI content</h3>
         <p class="desc">From product imagery and campaign visuals to AI-generated video. Come with a finished brief, or let us develop the creative direction with you.</p>
-        <div class="price"><strong>From $159</strong><span>one time or ongoing</span></div>
+        <div class="price"><strong data-usd="From $159" data-eur="From €140" data-dkk="From 1.000 kr.">From $159</strong><span>one time or ongoing</span></div>
         <ul class="points">
           <li>Realistic AI product &amp; lifestyle imagery</li>
           <li>Premium short-form AI video</li>
@@ -489,7 +499,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p class="num">03</p>
         <h3>Social media management</h3>
         <p class="desc">Strategy, planning, content creation, publishing and ongoing optimisation, with AI content integrated if it makes sense for your brand.</p>
-        <div class="price"><strong>From $800</strong><span>per month</span></div>
+        <div class="price"><strong data-usd="From $800" data-eur="From €700" data-dkk="From 5.000 kr.">From $800</strong><span>per month</span></div>
         <ul class="points">
           <li>Strategy &amp; monthly content planning</li>
           <li>Content creation &amp; editing</li>
@@ -687,6 +697,17 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   document.getElementById('cookie-settings').addEventListener('click',showBanner);
   var saved=getConsent();
   if(saved)applyConsent(saved);else setTimeout(showBanner,800);
+
+  // Valuta-vaelger paa priserne. Valget huskes i localStorage.
+  var curBtns=[].slice.call(document.querySelectorAll('.currency button'));
+  function setCurrency(cur){
+    document.querySelectorAll('[data-usd]').forEach(function(el){el.textContent=el.getAttribute('data-'+cur)});
+    curBtns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-cur')===cur?'true':'false')});
+  }
+  curBtns.forEach(function(b){b.addEventListener('click',function(){
+    var cur=b.getAttribute('data-cur');setCurrency(cur);try{localStorage.setItem('estaire-currency',cur)}catch(e){}
+  })});
+  try{var savedCur=localStorage.getItem('estaire-currency');if(savedCur&&/^(usd|eur|dkk)$/.test(savedCur))setCurrency(savedCur)}catch(e){}
 
   // Reveal on scroll
   var els=document.querySelectorAll('.reveal');
