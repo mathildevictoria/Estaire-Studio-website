@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Estaire Studio — We make brands worth following</title>
+<title>Estaire Studio | We make brands worth following</title>
 <meta name="description" content="Estaire Studio is an international social media management and creator studio. AI visuals, content repurposing and social media management for brands.">
 <link rel="icon" href="assets/estaire-logo.png">
 <link rel="preload" href="assets/fonts/instrument-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -59,6 +59,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;transition:background .25s,color .25s,transform .25s var(--ease),border-color .25s}
 .btn-dark{background:var(--ink);color:#fff}
 .btn-dark:hover{background:var(--accent-deep)}
+.btn-red{background:var(--accent-deep);color:#fff}
+.btn-red:hover{background:#5e1513}
+.btn-lg{height:58px;padding:0 32px;font-size:17px}
+@media (max-width:520px){.hero-actions .btn-lg{width:100%;justify-content:center;height:54px;font-size:16px}}
 .btn-line{border:1px solid var(--line);background:var(--surface)}
 .btn-line:hover{border-color:var(--ink)}
 .btn .arrow{transition:transform .25s var(--ease)}
@@ -113,9 +117,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hero-body h1{margin:14px auto 0;max-width:15ch;font-size:clamp(38px,6vw,64px);line-height:1.04;font-weight:700}
 .hero-body .lede{margin:20px auto 0;max-width:38rem}
 .hero-actions{margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-.copy-btn{position:relative}
-.copy-btn .copied{position:absolute;left:50%;top:-34px;transform:translate(-50%,6px);background:var(--ink);color:#fff;font-size:12px;padding:4px 10px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s var(--ease)}
-.copy-btn.is-copied .copied{opacity:1;transform:translate(-50%,0)}
 
 
 /* ---------- Carousel (reels) ---------- */
@@ -168,6 +169,25 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .work-points li{grid-template-columns:1fr}
   .collage{--g:10px;height:520px}
 }
+
+/* ---------- Social media management ---------- */
+.smm-sec{padding-top:200px}
+.wrap.smm{max-width:1400px;padding:0 48px}
+.smm{display:grid;grid-template-columns:.95fr 1.05fr;gap:120px;align-items:start}
+.smm-intro{position:sticky;top:120px}
+.smm-intro .h2{font-size:clamp(34px,4.4vw,52px);line-height:1.05;color:var(--accent-deep)}
+.smm-intro p{margin-top:20px;color:var(--muted);font-size:17px;max-width:32rem}
+.smm-intro p:first-of-type{margin-top:28px;color:var(--ink);font-size:19px;line-height:1.5}
+.smm-item{padding:28px 0;border-bottom:1px solid var(--line)}
+.smm-item:first-child{padding-top:0}
+.smm-item h3{font-size:22px;font-weight:600;line-height:1.25}
+.smm-item>p{margin-top:10px;color:var(--muted);font-size:16px}
+.smm-item .lead{color:var(--ink)}
+.smm-sub{margin-top:18px;display:grid;gap:14px}
+.smm-sub p{color:var(--muted);font-size:15px;padding-left:16px;border-left:2px solid var(--accent-wash)}
+.smm-sub strong{color:var(--ink);font-weight:600}
+@media (max-width:960px){.smm{grid-template-columns:1fr;gap:48px}.smm-intro{position:static}.wrap.smm{padding:0 24px}}
+@media (max-width:600px){.smm-sec{padding-top:128px}.smm-item h3{font-size:20px}}
 
 /* ---------- Services ---------- */
 .services{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -275,11 +295,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <h1>We make brands worth following.</h1>
     <p class="lede">Social media management and AI content, built around what your brand needs. We can manage your social presence from strategy to publishing, create standalone AI visuals and video, or combine both to create more content for social and ads. Bring the brief, or let us shape the creative direction with you.</p>
     <div class="hero-actions">
-      <a class="btn btn-dark" href="#work">See the work <span class="arrow">→</span></a>
-      <button class="btn btn-line copy-btn" type="button" data-copy="mail@estairestudio.com">
-        mail@estairestudio.com
-        <span class="copied" aria-live="polite">Copied</span>
-      </button>
+      <a class="btn btn-red btn-lg" href="#social">Social Media Management <span class="arrow">→</span></a>
+      <a class="btn btn-red btn-lg" href="#pictures">AI visuals &amp; commercials <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -289,7 +306,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <div class="section-head center reveal">
     <p class="eyebrow">Video content</p>
     <h2 class="h2" style="margin-top:12px">AI Content, Elevated.</h2>
-    <p class="lede center">From cinematic campaigns to aspirational lifestyle content — premium visuals created around your brand.</p>
+    <p class="lede center">From cinematic campaigns to aspirational lifestyle content, premium visuals created around your brand.</p>
     <p class="fine-print center">Selected work includes self-initiated concept projects created for portfolio purposes. Unless stated otherwise, these projects are not commissioned by or affiliated with the brands shown.</p>
   </div>
 
@@ -337,8 +354,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <div class="work-copy reveal">
       <p class="eyebrow">AI content</p>
       <h2 class="h2" style="margin-top:12px">What we create with AI.</h2>
-      <p class="lede">From product imagery and campaign concepts to lifestyle scenes, editorial visuals and social content — all built around your actual brand, products and creative direction.</p>
-      <p class="work-text">You can come to us with a finished concept, moodboard or campaign brief, and we’ll bring it to life. Or we can develop the creative direction with you — from the first idea to the final assets.</p>
+      <p class="lede">From product imagery and campaign concepts to lifestyle scenes, editorial visuals and social content, all built around your actual brand, products and creative direction.</p>
+      <p class="work-text">You can come to us with a finished concept, moodboard or campaign brief, and we’ll bring it to life. Or we can develop the creative direction with you, from the first idea to the final assets.</p>
       <p class="work-text">AI lets us explore more settings, styles, formats and creative directions without needing a new production for every concept. The result is a larger, more flexible content library ready for social, ads, campaigns and beyond.</p>
       <ul class="work-points">
         <li><strong>Product &amp; campaign visuals</strong><span>Product imagery, lifestyle scenes, editorial concepts and campaign assets built around your brand.</span></li>
@@ -391,6 +408,42 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   </div>
 </section>
 
+<!-- ============ Social media management ============ -->
+<section class="smm-sec" id="social">
+  <div class="wrap smm">
+    <div class="smm-intro reveal">
+      <h2 class="h2">Social Media Management</h2>
+      <p>For you if you want an active, welcoming social media presence without having to plan, create and remember to post every week.</p>
+      <p>I take care of your social media with a clear direction, consistent content and a personal approach.</p>
+      <p>Together, we build a presence that feels like your brand and gives people a reason to follow, connect and stay.</p>
+      <p>From turning your existing material into fresh content to publishing posts and responding to your community, I handle the day-to-day work so you can focus on your business.</p>
+      <p>You’ll also receive regular insights and reports, so you know what’s working, what we’re learning and what comes next.</p>
+    </div>
+    <div class="smm-services reveal">
+      <div class="smm-item">
+        <h3>Content Creation</h3>
+        <p class="lead">Make more of the content you already have, and bring new ideas to life.</p>
+        <div class="smm-sub">
+          <p><strong>Content repurposing:</strong> I turn your webinars, newsletters, photos, videos and other existing material into social media posts and reels. This includes graphic design, photo editing and video editing, using content you already have or share with me along the way.</p>
+          <p><strong>AI content:</strong> I use AI to expand on your existing visuals and create new product images, videos and campaign content with a realistic, high-end look that fits your brand.</p>
+        </div>
+      </div>
+      <div class="smm-item">
+        <h3>Planning &amp; Posting</h3>
+        <p>I plan, schedule and publish your content, keeping your profiles active and consistent. Every post fits into a wider plan, with a recognisable look, tone and message across your social media.</p>
+      </div>
+      <div class="smm-item">
+        <h3>Community Management</h3>
+        <p>I respond to DMs, comments and other social media enquiries in your brand’s voice, helping your audience feel heard and keeping conversations going.</p>
+      </div>
+      <div class="smm-item">
+        <h3>Brand Direction &amp; Social Media Strategy</h3>
+        <p>I review your current social media presence, get to know your business and audience, and analyse your competitors’ content. From there, I develop a clear strategy with content themes, a visual direction and a tone of voice that reflect your brand and support your goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ Services + prices ============ -->
 <section class="section" id="services">
   <div class="section-head center reveal">
@@ -404,7 +457,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p class="num">01</p>
         <h3>Content repurposing</h3>
         <p class="desc">Send us the content you already have. We turn your webinars, videos, photos, newsletters, interviews and posts into fresh social content you can keep using.</p>
-        <div class="price"><strong>From $450</strong><span>per month</span></div>
+        <div class="price"><strong>From $750</strong><span>per month</span></div>
         <ul class="points">
           <li>Turn existing content into new posts</li>
           <li>From webinars, old posts, images &amp; more</li>
@@ -420,11 +473,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p class="num">02</p>
         <h3>AI content</h3>
         <p class="desc">From product imagery and campaign visuals to AI-generated video. Come with a finished brief, or let us develop the creative direction with you.</p>
-        <div class="price"><strong>From $65</strong></div>
+        <div class="price"><strong>From $159</strong><span>one time or ongoing</span></div>
         <ul class="points">
           <li>Realistic AI product &amp; lifestyle imagery</li>
           <li>Premium short-form AI video</li>
-          <li>Built around your actual products &amp; brand</li>
+          <li>AI commercials</li>
           <li>Created to match your brand aesthetic</li>
         </ul>
         <p class="best"><b>Best for:</b> brands that need more visuals without endless photoshoots.</p>
@@ -436,7 +489,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p class="num">03</p>
         <h3>Social media management</h3>
         <p class="desc">Strategy, planning, content creation, publishing and ongoing optimisation, with AI content integrated if it makes sense for your brand.</p>
-        <div class="price"><strong>From $750</strong><span>per month</span></div>
+        <div class="price"><strong>From $800</strong><span>per month</span></div>
         <ul class="points">
           <li>Strategy &amp; monthly content planning</li>
           <li>Content creation &amp; editing</li>
