@@ -321,3 +321,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .nav-links .lang-switch a:hover{color:var(--ink)}
 .nav-links .lang-switch a[aria-current]{color:var(--ink);border-bottom-color:currentColor}
 @media (max-width:860px){.lang-switch{padding:18px 0 4px;font-size:13px;gap:12px}.nav-links .lang-switch a{border-bottom:1px solid transparent;padding:4px 0;font-size:13px}}
+
+/* Knap under "What we do" paa forsiden */
+.index-cta{margin-top:40px}
