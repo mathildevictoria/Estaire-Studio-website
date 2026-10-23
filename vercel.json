@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/da", "destination": "/", "permanent": true },
+    { "source": "/da/:path*", "destination": "/:path*", "permanent": true }
+  ]
+}
