@@ -6,10 +6,14 @@ Hjemmeside for Estaire Studio.
 
 | Sti | Indhold |
 |---|---|
-| `index.html` | Forsiden paa estairestudio.com. Lige nu en midlertidig "coming soon"-side. |
+| `index.html` | Forsiden: hero, What we do, Selected work, Packages, How it works, kontakt. |
+| `social-media-management/index.html` | Underside: estairestudio.com/social-media-management/ |
+| `content-creation/index.html` | Underside: estairestudio.com/content-creation/ |
+| `assets/site.css`, `assets/site.js` | Faelles design og funktioner (menu, dropdown, cookie-banner) for de tre sider ovenfor. |
+| `assets/img/` | Billeder til de offentlige sider. |
 | `ai/index.html` | Den tidligere hjemmeside (AI content, video, priser m.m.). Ligger paa estairestudio.com/ai bag password. |
 | `ai/assets/` | Billeder og videoer til /ai. Beskyttet af samme password. |
-| `assets/` | Faelles logo og skrifttyper, som begge sider bruger. |
+| `assets/` | Logo og skrifttyper, som alle sider bruger (ogsaa /ai). |
 | `middleware.js` | Password-beskyttelsen af /ai. Koerer paa Vercels server. |
 | `robots.txt` | Beder soegemaskiner holde sig fra /ai. |
 
@@ -26,7 +30,7 @@ igen. Et login huskes i 30 dage.
 
     python3 -m http.server 4321
 
-Aabn http://localhost:4321 (forsiden) og http://localhost:4321/ai/ (den
+Aabn http://localhost:4321 (forsiden), undersiderne og http://localhost:4321/ai/ (den
 tidligere side). Lokalt er der ikke password paa /ai - det findes kun paa Vercel.
 
 ## Deployment
