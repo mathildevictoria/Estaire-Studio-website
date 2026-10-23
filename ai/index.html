@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Estaire Studio | We make brands worth following</title>
+<meta name="description" content="Estaire Studio is an international social media management and creator studio. AI visuals, content repurposing and social media management for brands.">
+<link rel="icon" href="/assets/estaire-logo.png">
+<link rel="preload" href="/assets/fonts/instrument-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* ---------- Fonts ---------- */
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/instrument-sans-400-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/instrument-sans-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Instrument Sans";font-style:italic;font-weight:400;font-display:swap;src:url(/assets/fonts/instrument-sans-400-italic-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/instrument-sans-500-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/instrument-sans-500-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/instrument-sans-600-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/instrument-sans-600-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/instrument-sans-700-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/instrument-sans-700-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* ---------- Tokens ---------- */
+:root{
+  --canvas:#fbf9f7;
+  --surface:#ffffff;
+  --ink:#171314;
+  --muted:#6d6563;
+  --line:#ebe4df;
+  --accent:#a8322d;
+  --accent-deep:#7c1d1a;
+  --accent-wash:#f7eeeb;
+  --radius:18px;
+  --wrap:1152px;
+  --ease:cubic-bezier(.25,1,.5,1);
+}
+
+/* ---------- Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:"Instrument Sans",ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{letter-spacing:-.02em;text-wrap:balance}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.section{padding-top:112px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep)}
+.h2{font-size:clamp(30px,4vw,40px);line-height:1.1;font-weight:600}
+.lede{color:var(--muted);font-size:17px;max-width:36rem}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+.section-head{max-width:36rem;padding:0 24px}
+.section-head .lede{margin-top:14px}
+
+.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;transition:background .25s,color .25s,transform .25s var(--ease),border-color .25s}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--accent-deep)}
+.btn-red{background:var(--accent-deep);color:#fff}
+.btn-red:hover{background:#5e1513}
+.btn-lg{height:58px;padding:0 32px;font-size:17px}
+@media (max-width:520px){.hero-actions .btn-lg{width:100%;justify-content:center;height:54px;font-size:16px}}
+.btn-line{border:1px solid var(--line);background:var(--surface)}
+.btn-line:hover{border-color:var(--ink)}
+.btn .arrow{transition:transform .25s var(--ease)}
+.btn:hover .arrow{transform:translateX(3px)}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:40;background:rgba(251,249,247,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(235,228,223,.8)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px}
+.nav-logo img{height:40px;width:auto}
+.nav-links{display:flex;align-items:center;gap:32px;font-size:15px;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{height:42px;padding:0 20px;font-size:14px}
+.menu-btn{display:none;width:42px;height:42px;border-radius:999px;border:1px solid var(--line);align-items:center;justify-content:center}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:16px;height:1.5px;background:var(--ink);position:relative;transition:transform .3s var(--ease),background .3s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-5px}.menu-btn span::after{top:5px}
+.menu-open .menu-btn span{background:transparent}
+.menu-open .menu-btn span::before{transform:translateY(5px) rotate(45deg)}
+.menu-open .menu-btn span::after{transform:translateY(-5px) rotate(-45deg)}
+.mobile-menu{display:none}
+
+@media (max-width:760px){
+  .nav{min-height:64px}
+  .nav-logo img{height:34px}
+  .nav-links,.nav-cta{display:none}
+  .menu-btn{display:inline-flex}
+  .mobile-menu{display:block;max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+  .menu-open .mobile-menu{max-height:320px}
+  .mobile-menu ul{padding:8px 24px 24px;display:grid;gap:4px}
+  .mobile-menu a{display:block;padding:10px 0;font-size:18px;border-bottom:1px solid var(--line)}
+}
+
+/* ---------- Hero ---------- */
+.hero-media{position:relative;height:58svh;min-height:400px;max-height:640px;overflow:hidden;isolation:isolate}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%;transform:scale(1.04);animation:hero-zoom 2.4s var(--ease) forwards}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,19,20,0) 45%,rgba(251,249,247,.35) 80%,var(--canvas) 100%)}
+@keyframes hero-zoom{to{transform:scale(1)}}
+/* desktop: bredformat-billedet med ansigtet i hoejre side */
+@media (min-width:1024px){.hero-media img{object-position:70% 38%}}
+.hero-body{position:relative;margin-top:-72px;text-align:center;padding:0 24px}
+.hero-badge{display:inline-flex;align-items:center;justify-content:center;width:96px;height:96px;border-radius:50%;background:var(--surface);box-shadow:0 12px 40px -12px rgba(23,19,20,.25);border:1px solid var(--line)}
+.hero-badge img{width:66px;height:auto}
+.hero-body .eyebrow{margin-top:24px}
+.hero-body h1{margin:14px auto 0;max-width:15ch;font-size:clamp(38px,6vw,64px);line-height:1.04;font-weight:700}
+.hero-body .lede{margin:20px auto 0;max-width:38rem}
+.hero-actions{margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+
+
+/* ---------- Carousel (reels) ---------- */
+.carousel{--rg:24px;position:relative;margin-top:56px}
+.rail{display:flex;gap:var(--rg);overflow-x:auto;padding:0 0 8px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.rail::-webkit-scrollbar{display:none}
+.reel{flex:0 0 auto;width:calc((100% - 4 * var(--rg)) / 4.4)}
+@media (max-width:960px){.carousel{--rg:20px}.reel{width:calc((100% - 2 * var(--rg)) / 2.6)}}
+@media (max-width:600px){.carousel{--rg:14px}.reel{width:calc((100% - var(--rg)) / 1.6)}}
+.reel-frame{position:relative;aspect-ratio:9/16;border-radius:var(--radius);overflow:hidden;background:var(--accent-wash);border:1px solid var(--line)}
+.reel-frame img,.reel-frame video{width:100%;height:100%;object-fit:cover}
+/* placeholder until the video files are ready */
+.reel-frame.slot{display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--accent-wash),#efe6e2)}
+.reel-frame.slot::before{content:"";width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7v10l8-5z' fill='%23171314'/%3E%3C/svg%3E") center/22px no-repeat}
+.rail-controls{display:flex;justify-content:center;gap:10px;margin-top:28px}
+.rail-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:inline-flex;align-items:center;justify-content:center;transition:border-color .25s,opacity .25s}
+.rail-btn:hover{border-color:var(--ink)}
+
+/* ---------- Work samples (kort + skraa kollage) ---------- */
+.work-sec{overflow-x:clip}
+.work{display:grid;grid-template-columns:.9fr 1.1fr;gap:104px;align-items:center}
+.work-copy .lede{margin-top:14px}
+.work-text{margin-top:18px;color:var(--muted);font-size:17px;max-width:34rem}
+.work-points{margin-top:32px;display:grid;gap:0;max-width:34rem;border-top:1px solid var(--line)}
+.work-points li{display:grid;grid-template-columns:180px 1fr;gap:4px 20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.work-points strong{font-weight:600}
+.work-points span{color:var(--muted)}
+.work-note{margin-top:20px;max-width:34rem;color:var(--muted);font-size:13px;line-height:1.55}
+
+.collage{--g:14px;position:relative;height:760px;overflow:hidden;margin-right:calc(-1 * max(24px,(100vw - var(--wrap))/2 + 24px));-webkit-mask-image:linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent)}
+.collage-inner{position:absolute;top:0;left:0;display:grid;grid-template-columns:repeat(4,172px);gap:var(--g);align-items:start}
+/* hver kolonne indeholder sit saet to gange og flyttes i loop af JS;
+   man kan selv scrolle (hjul/trackpad) eller traekke (mus/finger) */
+.collage{cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
+.collage.dragging{cursor:grabbing}
+.collage img{-webkit-user-drag:none;pointer-events:none}
+.collage-col{display:grid;gap:var(--g);padding-bottom:var(--g);will-change:transform}
+.collage img,.collage .slot{width:100%;border-radius:14px;object-fit:cover;box-shadow:0 18px 40px -22px rgba(23,19,20,.45);background:var(--accent-wash)}
+/* pladsholder til kommende billeder - erstat med <img class="tall|sq|wide" ...> */
+.collage .slot{background:linear-gradient(160deg,var(--accent-wash),#efe6e2);box-shadow:none;border:1px solid var(--line)}
+.collage .tall{aspect-ratio:3/4}
+.collage .sq{aspect-ratio:4/5}
+.collage .wide{aspect-ratio:4/3}
+@media (max-width:960px){
+  .work{grid-template-columns:1fr;gap:24px}
+  .collage{height:640px;margin:120px 0 0}
+  .collage-inner{left:0;right:0;margin:0 auto;max-width:620px;grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:520px){
+  .work-points li{grid-template-columns:1fr}
+  .collage{--g:10px;height:520px}
+}
+
+/* ---------- Social media management ---------- */
+.smm-sec{padding-top:200px}
+.wrap.smm{max-width:1400px;padding:0 48px}
+.smm{display:grid;grid-template-columns:.95fr 1.05fr;gap:120px;align-items:start}
+.smm-intro{position:sticky;top:120px}
+.smm-intro .h2{font-size:clamp(34px,4.4vw,52px);line-height:1.05;color:var(--accent-deep)}
+.smm-intro p{margin-top:20px;color:var(--muted);font-size:17px;max-width:32rem}
+.smm-intro p:first-of-type{margin-top:28px;color:var(--ink);font-size:19px;line-height:1.5}
+.smm-item{padding:28px 0;border-bottom:1px solid var(--line)}
+.smm-item:first-child{padding-top:0}
+.smm-item h3{font-size:22px;font-weight:600;line-height:1.25}
+.smm-item>p{margin-top:10px;color:var(--muted);font-size:16px}
+.smm-item .lead{color:var(--ink)}
+.smm-sub{margin-top:18px;display:grid;gap:14px}
+.smm-sub p{color:var(--muted);font-size:15px;padding-left:16px;border-left:2px solid var(--accent-wash)}
+.smm-sub strong{color:var(--ink);font-weight:600}
+@media (max-width:960px){.smm{grid-template-columns:1fr;gap:48px}.smm-intro{position:static}.wrap.smm{padding:0 24px}}
+@media (max-width:600px){.smm-sec{padding-top:128px}.smm-item h3{font-size:20px}}
+
+/* ---------- Services ---------- */
+.services{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px}
+.service .num{font-size:12px;font-weight:600;letter-spacing:.18em;color:var(--accent-deep)}
+.service h3{margin-top:14px;font-size:22px;font-weight:600;line-height:1.2}
+.service .desc{margin-top:12px;color:var(--muted);font-size:15px}
+.currency{margin:40px auto 0;width:max-content;display:flex;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
+.currency button{min-width:52px;height:40px;padding:0 14px;border-radius:999px;font-size:15px;font-weight:600;color:var(--muted);transition:background .25s,color .25s}
+.currency button:hover{color:var(--ink)}
+.currency button[aria-pressed="true"]{background:var(--accent-deep);color:#fff}
+.currency+.services{margin-top:24px}
+.service .price{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px}
+.service .price strong{font-size:26px;font-weight:600;letter-spacing:-.02em;white-space:nowrap}
+.service .price span{color:var(--muted);font-size:14px}
+.service ul.points{margin-top:18px;display:grid;gap:10px;font-size:15px}
+.service ul.points li{display:flex;gap:10px}
+.service ul.points li::before{content:"";flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:.6em}
+.service .best{margin-top:20px;font-size:14px;color:var(--muted)}
+.service .best b{color:var(--ink);font-weight:600}
+.service .btn{margin-top:auto;align-self:flex-start}
+.service .spacer{flex:1;min-height:24px}
+.service.featured{background:var(--ink);color:#fff;border-color:var(--ink)}
+.service.featured .num{color:#e7a39d}
+.service.featured .desc,.service.featured .price span,.service.featured .best{color:rgba(255,255,255,.66)}
+.service.featured .best b{color:#fff}
+.service.featured .price{border-color:rgba(255,255,255,.14)}
+.service.featured .btn{background:#fff;color:var(--ink)}
+.service.featured .btn:hover{background:var(--accent-wash)}
+.services-note{margin-top:28px;text-align:center;color:var(--muted);font-size:15px}
+.services-note a{color:var(--ink);font-weight:600;border-bottom:1px solid currentColor}
+@media (max-width:960px){.services{grid-template-columns:1fr;max-width:560px;margin-left:auto;margin-right:auto}}
+
+
+/* ---------- Contact ---------- */
+.contact{padding-top:128px;text-align:center}
+.contact .h2{margin:0 auto;max-width:18ch;font-size:clamp(32px,5vw,52px)}
+.contact .lede{margin:18px auto 0}
+.contact .hero-actions{margin-top:32px}
+
+/* ---------- Cookie-banner ---------- */
+.cookie{position:fixed;left:24px;bottom:24px;z-index:60;max-width:400px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 24px 60px -24px rgba(23,19,20,.35);opacity:0;transform:translateY(16px);transition:opacity .4s var(--ease),transform .4s var(--ease);pointer-events:none}
+.cookie.show{opacity:1;transform:none;pointer-events:auto}
+.cookie h2{margin:0;font-size:16px;font-weight:600;letter-spacing:-.01em}
+.cookie p{margin-top:8px;color:var(--muted);font-size:14px;line-height:1.55}
+.cookie-actions{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.cookie-actions .btn{height:40px;padding:0 18px;font-size:14px}
+.cookie-link{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.cookie-link:hover{color:var(--ink)}
+@media (max-width:520px){.cookie{left:12px;right:12px;bottom:12px;max-width:none;padding:18px}.cookie-actions .btn{flex:1;justify-content:center}}
+@media (prefers-reduced-motion:reduce){.cookie{transition:none}}
+
+/* ---------- Footer ---------- */
+.site-footer{margin-top:128px;border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-top:64px;padding-bottom:48px}
+.footer-grid img{height:44px;width:auto}
+.footer-grid .about{margin-top:16px;color:var(--muted);font-size:15px;max-width:22rem}
+.footer-grid h4{margin:0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.footer-grid ul{margin-top:16px;display:grid;gap:10px;font-size:15px}
+.footer-grid ul a:hover{color:var(--accent-deep)}
+.fine-print{margin-top:14px;max-width:36rem;color:var(--muted);font-size:12px;line-height:1.55;opacity:.85}
+.footer-legal{border-top:1px solid var(--line);padding-top:24px;padding-bottom:40px;color:var(--muted);font-size:12px;line-height:1.6}
+.footer-legal h4{margin:0 0 8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.footer-legal p{margin:0 0 8px;max-width:52rem}
+.footer-base{border-top:1px solid var(--line);padding-top:24px;padding-bottom:32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+
+@media (max-width:760px){
+  .section{padding-top:88px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header class="site-header" id="top">
+  <nav class="wrap nav" aria-label="Main">
+    <a href="#top" class="nav-logo" aria-label="Estaire Studio, back to top">
+      <img src="/assets/estaire-logo-full.png" alt="Estaire Studio" width="1110" height="450">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+    </ul>
+    <a class="btn btn-dark nav-cta" href="https://calendly.com/mail-estairestudio/30min" target="_blank" rel="noopener">Book a call</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="https://calendly.com/mail-estairestudio/30min" target="_blank" rel="noopener">Book a call ↗</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="hero-media">
+    <picture>
+      <source media="(min-width:1024px)" srcset="/ai/assets/img/Gemini_Generated_Image_y0qp8fy0qp8fy0qp.jpeg" width="1376" height="768">
+      <img src="/ai/assets/img/hero-portrait.webp" alt="" width="1600" height="1800" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="hero-body">
+    <span class="hero-badge"><img src="/assets/estaire-logo.png" alt="" width="252" height="102"></span>
+    <p class="eyebrow">International social media management &amp; creator studio</p>
+    <h1>We make brands worth following.</h1>
+    <p class="lede">Social media management and AI content, built around what your brand needs. We can manage your social presence from strategy to publishing, create standalone AI visuals and video, or combine both to create more content for social and ads. Bring the brief, or let us shape the creative direction with you.</p>
+    <div class="hero-actions">
+      <a class="btn btn-red btn-lg" href="#social">Social Media Management <span class="arrow">→</span></a>
+      <a class="btn btn-red btn-lg" href="#pictures">AI visuals &amp; commercials <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ In motion (9:16) ============ -->
+<section class="section" id="work">
+  <div class="section-head center reveal">
+    <p class="eyebrow">Video content</p>
+    <h2 class="h2" style="margin-top:12px">AI Content, Elevated.</h2>
+    <p class="lede center">From cinematic campaigns to aspirational lifestyle content, premium visuals created around your brand.</p>
+    <p class="fine-print center">Selected work includes self-initiated concept projects created for portfolio purposes. Unless stated otherwise, these projects are not commissioned by or affiliated with the brands shown.</p>
+  </div>
+
+  <div class="carousel reveal">
+    <!--
+      Pladsholdere: erstat <div class="reel-frame slot"> med fx
+      <div class="reel-frame"><video src="/ai/assets/video/xx.mp4" muted playsinline loop preload="none" poster="..."></video> ...</div>
+    -->
+    <div class="rail" id="reel-rail">
+      <article class="reel">
+        <div class="reel-frame"><video src="/ai/assets/video/kalk-taske.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Burgundy leather handbag held up by a black-gloved hand against a pale blue backdrop"></video></div>
+      </article>
+      <article class="reel">
+        <div class="reel-frame"><video src="/ai/assets/video/ring.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Gold diamond ring frozen inside a block of ice"></video></div>
+      </article>
+      <article class="reel">
+        <div class="reel-frame"><video src="/ai/assets/video/soda.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Strawberry lollipop floating against a pink backdrop"></video></div>
+      </article>
+      <article class="reel">
+        <div class="reel-frame"><video src="/ai/assets/video/perfume.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Black perfume bottle in moody purple light with flowers and coffee beans"></video></div>
+      </article>
+      <article class="reel">
+        <div class="reel-frame"><video src="/ai/assets/video/seda-barrier-cream.mp4" autoplay muted loop playsinline preload="metadata" aria-label="AI video for Seda barrier cream"></video></div>
+      </article>
+      <article class="reel">
+        <div class="reel-frame"><video src="/ai/assets/video/matcha-walk.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Lifestyle video of a woman walking with an iced matcha"></video></div>
+      </article>
+      <article class="reel">
+        <div class="reel-frame"><video src="/ai/assets/video/slange.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Editorial video of a woman seen from behind with a gold snake along her spine"></video></div>
+      </article>
+      <article class="reel">
+        <div class="reel-frame"><video src="/ai/assets/video/1001.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Cinematic shot of a wet road leading into a tunnel under a forested hillside"></video></div>
+      </article>
+    </div>
+    <div class="rail-controls">
+      <button class="rail-btn" type="button" data-dir="-1" aria-label="Previous">←</button>
+      <button class="rail-btn" type="button" data-dir="1" aria-label="Next">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Work samples ============ -->
+<section class="section work-sec" id="pictures">
+  <div class="wrap work">
+    <div class="work-copy reveal">
+      <p class="eyebrow">AI content</p>
+      <h2 class="h2" style="margin-top:12px">What we create with AI.</h2>
+      <p class="lede">From product imagery and campaign concepts to lifestyle scenes, editorial visuals and social content, all built around your actual brand, products and creative direction.</p>
+      <p class="work-text">You can come to us with a finished concept, moodboard or campaign brief, and we’ll bring it to life. Or we can develop the creative direction with you, from the first idea to the final assets.</p>
+      <p class="work-text">AI lets us explore more settings, styles, formats and creative directions without needing a new production for every concept. The result is a larger, more flexible content library ready for social, ads, campaigns and beyond.</p>
+      <ul class="work-points">
+        <li><strong>Product &amp; campaign visuals</strong><span>Product imagery, lifestyle scenes, editorial concepts and campaign assets built around your brand.</span></li>
+        <li><strong>Creative variations</strong><span>Explore different settings, compositions, seasons and visual directions without starting a new shoot.</span></li>
+        <li><strong>From brief to final asset</strong><span>Bring us your concept, or let us handle the creative direction, development and final execution.</span></li>
+      </ul>
+      <p class="work-note">We label AI-generated and AI-modified content, as EU rules require, because being open about how something was made is the right way to work.</p>
+    </div>
+    <div class="collage reveal" id="pictures-collage" aria-label="Stills from the studio">
+      <div class="collage-inner">
+        <div class="collage-col">
+          <img class="tall" src="/ai/assets/img/smykker-close-up.webp" alt="Close-up of gold rings and a leather belt on a white shirt" loading="lazy" style="object-position:50% 40%">
+          <img class="sq" src="/ai/assets/img/rod-kjole.webp" alt="Burgundy beaded halter gown in sunlight" loading="lazy" style="object-position:50% 30%">
+          <img class="sq" src="/ai/assets/img/laebestift.webp" alt="Red lipstick held by a hand in a burgundy satin glove" loading="lazy" style="object-position:50% 35%">
+          <img class="tall" src="/ai/assets/img/ring-champagne.webp" alt="Diamond ring sinking in a glass of champagne" loading="lazy" style="object-position:50% 50%">
+          <img class="tall" src="/ai/assets/img/bikini.webp" alt="Blue bikini floating in clear turquoise water" loading="lazy" style="object-position:50% 40%">
+          <img class="sq" src="/ai/assets/img/kiko-macaron.webp" alt="Close-up of a lavender macaron embossed with a logo" loading="lazy" style="object-position:50% 50%">
+          <img class="tall" src="/ai/assets/img/ring-haand.webp" alt="Hand wearing a diamond ring holding a champagne glass" loading="lazy" style="object-position:50% 45%">
+          <img class="tall" src="/ai/assets/img/kiko-macaron-gloss.webp" alt="Macaron with pink gloss melting over it" loading="lazy" style="object-position:50% 50%">
+        </div>
+        <div class="collage-col">
+          <img class="sq" src="/ai/assets/img/sand.webp" alt="Pearl necklace on a scallop shell in the sand" loading="lazy" style="object-position:50% 50%">
+          <img class="tall" src="/ai/assets/img/rod-floejl.webp" alt="Portrait in red velvet with ruby rings" loading="lazy" style="object-position:50% 35%">
+          <img class="tall" src="/ai/assets/img/kiko-lipgloss.webp" alt="Shimmering pink lip gloss bottle on white" loading="lazy" style="object-position:50% 45%">
+          <img class="sq" src="/ai/assets/img/parfume-sand.webp" alt="Perfume bottle lying in shallow water on the sand" loading="lazy" style="object-position:50% 45%">
+          <img class="tall" src="/ai/assets/img/sort-jakkesaet.webp" alt="Model in a black double-breasted suit holding a black handbag" loading="lazy" style="object-position:50% 15%">
+          <img class="tall" src="/ai/assets/img/chupa-sodavand.webp" alt="Pink sparkling drink next to a lollipop and soda can" loading="lazy" style="object-position:50% 50%">
+          <img class="sq" src="/ai/assets/img/kiko-pensel.webp" alt="Pink gloss dripping from an applicator" loading="lazy" style="object-position:50% 40%">
+        </div>
+        <div class="collage-col">
+          <img class="tall" src="/ai/assets/img/chupa-slikkepind.webp" alt="Strawberry lollipop against a pink backdrop" loading="lazy" style="object-position:50% 40%">
+          <img class="tall" src="/ai/assets/img/sort-hvid-profil.webp" alt="Black-and-white profile portrait" loading="lazy" style="object-position:50% 30%">
+          <img class="sq" src="/ai/assets/img/burger.webp" alt="Two cheeseburgers on a tray on a steel table" loading="lazy" style="object-position:50% 50%">
+          <img class="tall" src="/ai/assets/img/orange-haar.webp" alt="Model with long orange hair in a black vest and wide trousers" loading="lazy" style="object-position:50% 12%">
+          <img class="sq" src="/ai/assets/img/kalk-taske-jakkesaet.webp" alt="Model in a black suit holding a burgundy handbag" loading="lazy" style="object-position:50% 30%">
+          <img class="tall" src="/ai/assets/img/elf-oerken.webp" alt="Giant pink lip balm tubes rising from desert dunes" loading="lazy" style="object-position:50% 45%">
+          <img class="tall" src="/ai/assets/img/elf-laeber.webp" alt="Close-up of lips with a pink lip balm tube" loading="lazy" style="object-position:50% 40%">
+        </div>
+        <div class="collage-col">
+          <img class="tall" src="/ai/assets/img/kalk-taske-handsker.webp" alt="Burgundy leather handbag held by black-gloved hands" loading="lazy" style="object-position:50% 50%">
+          <img class="tall" src="/ai/assets/img/flamingo.webp" alt="Aerial view of a woman on a pink flamingo float beside a yacht" loading="lazy" style="object-position:50% 25%">
+          <img class="sq" src="/ai/assets/img/serum.webp" alt="Serum bottle resting in a glass of water" loading="lazy" style="object-position:50% 60%">
+          <img class="tall" src="/ai/assets/img/mango-butter.webp" alt="Hand holding a yellow jar of mango body butter" loading="lazy" style="object-position:50% 50%">
+          <img class="tall" src="/ai/assets/img/greece.webp" alt="Painter at an easel with a torn-paper view of a Greek coastline" loading="lazy" style="object-position:50% 45%">
+          <img class="sq" src="/ai/assets/img/kalk-taske-orange-haar.webp" alt="Model with orange hair carrying a black leather bag" loading="lazy" style="object-position:50% 30%">
+          <img class="sq" src="/ai/assets/img/kalk-taske-duo.webp" alt="Two models in black outfits holding leather handbags" loading="lazy" style="object-position:50% 40%">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Social media management ============ -->
+<section class="smm-sec" id="social">
+  <div class="wrap smm">
+    <div class="smm-intro reveal">
+      <h2 class="h2">Social Media Management</h2>
+      <p>For you if you want an active, welcoming social media presence without having to plan, create and remember to post every week.</p>
+      <p>I take care of your social media with a clear direction, consistent content and a personal approach.</p>
+      <p>Together, we build a presence that feels like your brand and gives people a reason to follow, connect and stay.</p>
+      <p>From turning your existing material into fresh content to publishing posts and responding to your community, I handle the day-to-day work so you can focus on your business.</p>
+      <p>You’ll also receive regular insights and reports, so you know what’s working, what we’re learning and what comes next.</p>
+    </div>
+    <div class="smm-services reveal">
+      <div class="smm-item">
+        <h3>Content Creation</h3>
+        <p class="lead">Make more of the content you already have, and bring new ideas to life.</p>
+        <div class="smm-sub">
+          <p><strong>Content repurposing:</strong> I turn your webinars, newsletters, photos, videos and other existing material into social media posts and reels. This includes graphic design, photo editing and video editing, using content you already have or share with me along the way.</p>
+          <p><strong>AI content:</strong> I use AI to expand on your existing visuals and create new product images, videos and campaign content with a realistic, high-end look that fits your brand.</p>
+          <p><strong>UGC Content Creation:</strong> I film videos and take photos for your social media on an ongoing basis, showing your product or software in use. Simply send me your product or give me access to your app or platform, and I’ll create content in settings and locations that match your brand’s style.</p>
+        </div>
+      </div>
+      <div class="smm-item">
+        <h3>Planning &amp; Posting</h3>
+        <p>I plan, schedule and publish your content, keeping your profiles active and consistent. Every post fits into a wider plan, with a recognisable look, tone and message across your social media.</p>
+      </div>
+      <div class="smm-item">
+        <h3>Community Management</h3>
+        <p>I respond to DMs, comments and other social media enquiries in your brand’s voice, helping your audience feel heard and keeping conversations going.</p>
+      </div>
+      <div class="smm-item">
+        <h3>Brand Direction &amp; Social Media Strategy</h3>
+        <p>I review your current social media presence, get to know your business and audience, and analyse your competitors’ content. From there, I develop a clear strategy with content themes, a visual direction and a tone of voice that reflect your brand and support your goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Services + prices ============ -->
+<section class="section" id="services">
+  <div class="section-head center reveal">
+    <p class="eyebrow">Services</p>
+    <h2 class="h2" style="margin-top:12px">Three ways we can create together.</h2>
+    <p class="lede center">From standalone AI content to ongoing social media management, start with one service, combine them, or let us build the right setup around your brand.</p>
+  </div>
+  <div class="wrap">
+    <div class="currency reveal" role="group" aria-label="Show prices in">
+      <button type="button" data-cur="usd" aria-pressed="true" aria-label="US dollars">$</button>
+      <button type="button" data-cur="eur" aria-pressed="false" aria-label="Euro">€</button>
+      <button type="button" data-cur="dkk" aria-pressed="false" aria-label="Danish kroner">kr.</button>
+    </div>
+    <div class="services">
+      <article class="service reveal">
+        <p class="num">01</p>
+        <h3>Content repurposing</h3>
+        <p class="desc">Send us the content you already have. We turn your webinars, videos, photos, newsletters, interviews and posts into fresh social content you can keep using.</p>
+        <div class="price"><strong data-usd="From $750" data-eur="From €650" data-dkk="From 5.000 kr.">From $750</strong><span>per month</span></div>
+        <ul class="points">
+          <li>Turn existing content into new posts</li>
+          <li>From webinars, old posts, images &amp; more</li>
+          <li>Carousels, statics &amp; reels</li>
+          <li>Ready-to-publish content</li>
+        </ul>
+        <p class="best"><b>Best for:</b> brands with valuable content that isn't being fully used.</p>
+        <div class="spacer"></div>
+        <a class="btn btn-line" href="https://calendly.com/mail-estairestudio/30min" target="_blank" rel="noopener">Talk about repurposing <span class="arrow">→</span></a>
+      </article>
+
+      <article class="service featured reveal">
+        <p class="num">02</p>
+        <h3>AI content</h3>
+        <p class="desc">From product imagery and campaign visuals to AI-generated video. Come with a finished brief, or let us develop the creative direction with you.</p>
+        <div class="price"><strong data-usd="From $159" data-eur="From €140" data-dkk="From 1.000 kr.">From $159</strong><span>one time or ongoing</span></div>
+        <ul class="points">
+          <li>Realistic AI product &amp; lifestyle imagery</li>
+          <li>Premium short-form AI video</li>
+          <li>AI commercials</li>
+          <li>Created to match your brand aesthetic</li>
+        </ul>
+        <p class="best"><b>Best for:</b> brands that need more visuals without endless photoshoots.</p>
+        <div class="spacer"></div>
+        <a class="btn" href="https://calendly.com/mail-estairestudio/30min" target="_blank" rel="noopener">Talk about AI content <span class="arrow">→</span></a>
+      </article>
+
+      <article class="service reveal">
+        <p class="num">03</p>
+        <h3>Social media management</h3>
+        <p class="desc">Strategy, planning, content creation, publishing and ongoing optimisation, with AI content integrated if it makes sense for your brand.</p>
+        <div class="price"><strong data-usd="From $800" data-eur="From €700" data-dkk="From 5.000 kr.">From $800</strong><span>per month</span></div>
+        <ul class="points">
+          <li>Strategy &amp; monthly content planning</li>
+          <li>Content creation &amp; editing</li>
+          <li>Scheduling &amp; publishing</li>
+          <li>Ongoing optimisation &amp; management</li>
+        </ul>
+        <p class="best"><b>Best for:</b> brands that want someone to own their social presence.</p>
+        <div class="spacer"></div>
+        <a class="btn btn-line" href="https://calendly.com/mail-estairestudio/30min" target="_blank" rel="noopener">Talk about management <span class="arrow">→</span></a>
+      </article>
+    </div>
+    <p class="services-note reveal"><a href="mailto:mail@estairestudio.com">Tell us what you're trying to create</a></p>
+  </div>
+</section>
+
+<!-- ============ Contact ============ -->
+<section class="contact wrap" id="contact">
+  <div class="reveal">
+    <p class="eyebrow">Let's talk</p>
+    <h2 class="h2" style="margin-top:14px">Make the next thing unforgettable.</h2>
+    <p class="lede">Book 30 minutes. We'll tell you honestly what we'd do with what you already have.</p>
+    <div class="hero-actions">
+      <a class="btn btn-dark" href="https://calendly.com/mail-estairestudio/30min" target="_blank" rel="noopener">Book a call <span class="arrow">↗</span></a>
+      <a class="btn btn-line" href="mailto:mail@estairestudio.com">mail@estairestudio.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <img src="/assets/estaire-logo-full.png" alt="Estaire Studio" width="1110" height="450" loading="lazy">
+      <p class="about">International social media management &amp; creator studio. AI visuals, content repurposing and social media management.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:mail@estairestudio.com">mail@estairestudio.com</a></li>
+        <li><a href="https://calendly.com/mail-estairestudio/30min" target="_blank" rel="noopener">Book a call</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© <span id="year">2026</span> Estaire Studio · CVR/VAT: DK43394967</span>
+    <span><button class="cookie-link" type="button" id="cookie-settings">Cookie settings</button> · Estaire Studio · AI content</span>
+  </div>
+  <div class="wrap footer-legal">
+    <h4>Concept work / Spec work</h4>
+    <p>Selected projects shown on this website are self-initiated creative concepts made for portfolio purposes only. Brand names, products and trademarks may be featured to demonstrate creative direction, AI content production and campaign concepts.</p>
+    <p>These projects are not commissioned, sponsored, endorsed or affiliated with the brands shown unless explicitly stated otherwise.</p>
+  </div>
+</footer>
+
+<!-- ============ Cookie-banner ============ -->
+<div class="cookie" id="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-text" hidden>
+  <h2 id="cookie-title">We value your privacy</h2>
+  <p id="cookie-text">We use cookies to give you the best experience. Necessary cookies are always on; any others are only used if you accept.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-dark" type="button" data-consent="all">Accept all</button>
+    <button class="btn btn-line" type="button" data-consent="necessary">Only necessary</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Mobile menu
+  var header=document.querySelector('.site-header'),menuBtn=document.querySelector('.menu-btn');
+  menuBtn.addEventListener('click',function(){
+    var open=header.classList.toggle('menu-open');
+    menuBtn.setAttribute('aria-expanded',open);
+    menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){
+    a.addEventListener('click',function(){header.classList.remove('menu-open');menuBtn.setAttribute('aria-expanded','false')});
+  });
+
+  // Copy e-mail
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var text=btn.getAttribute('data-copy');
+      var done=function(){btn.classList.add('is-copied');setTimeout(function(){btn.classList.remove('is-copied')},1600)};
+      if(navigator.clipboard){navigator.clipboard.writeText(text).then(done,function(){location.href='mailto:'+text})}
+      else location.href='mailto:'+text;
+    });
+  });
+
+  // Reel-karrusel: uendelig loop. Saettet kopieres een gang, og naar vi har
+  // koert et helt saet frem, hopper vi usynligt tilbage.
+  var rail=document.getElementById('reel-rail'),btns=document.querySelectorAll('.rail-btn');
+  var originals=[].slice.call(rail.children);
+  originals.forEach(function(el){var c=el.cloneNode(true);c.setAttribute('aria-hidden','true');c.setAttribute('inert','');rail.appendChild(c);
+    c.querySelectorAll('video').forEach(function(v){v.muted=true;var pr=v.play();if(pr)pr.catch(function(){})});
+  });
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SPEED=35,pos=0,target=null,lastSet=0,hover=false,holdUntil=0,visible=true,last=performance.now();
+  function period(){return rail.children[originals.length].offsetLeft-rail.children[0].offsetLeft}
+  function step(){return rail.children[0].getBoundingClientRect().width+(parseFloat(getComputedStyle(rail).columnGap)||16)}
+  function wrap(){var P=period();if(pos>=P){pos-=P;if(target!==null)target-=P}if(pos<0){pos+=P;if(target!==null)target+=P}}
+  function frame(now){
+    var dt=Math.min((now-last)/1000,.1);last=now;
+    if(visible){
+      if(target!==null){pos+=(target-pos)*.14;if(Math.abs(target-pos)<.5){pos=target;target=null}}
+      else if(!reduce&&!hover&&now>holdUntil)pos+=SPEED*dt;
+      wrap();rail.scrollLeft=pos;lastSet=rail.scrollLeft;
+    }
+    requestAnimationFrame(frame);
+  }
+  // manuel scroll (swipe / trackpad) overtager positionen
+  rail.addEventListener('scroll',function(){
+    if(Math.abs(rail.scrollLeft-lastSet)>2){pos=rail.scrollLeft;target=null;holdUntil=performance.now()+2500;wrap()}
+  },{passive:true});
+  rail.addEventListener('mouseenter',function(){hover=true});
+  rail.addEventListener('mouseleave',function(){hover=false});
+  rail.addEventListener('touchstart',function(){holdUntil=performance.now()+4000},{passive:true});
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    target=(target!==null?target:pos)+step()*b.dataset.dir;holdUntil=performance.now()+3000;
+  })});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(e){visible=e[0].isIntersecting;last=performance.now()}).observe(rail);
+  requestAnimationFrame(frame);
+
+  // Billedkollage: hver kolonne kopieres een gang og glider opad i loop.
+  // Samme fart i alle kolonner, saa layoutet (forskydningen) altid er det samme.
+  // Man kan selv scrolle med hjul/trackpad eller traekke med mus/finger;
+  // efter et par sekunder uden input koerer den videre af sig selv.
+  var COL_SPEED=22,COL_OFFSET=[0,.18,.42,.3];
+  var collage=document.getElementById('pictures-collage');
+  var cols=[].slice.call(document.querySelectorAll('.collage-col'));
+  cols.forEach(function(col){
+    [].slice.call(col.children).forEach(function(el){var c=el.cloneNode(true);c.setAttribute('aria-hidden','true');c.alt='';col.appendChild(c)});
+  });
+  var halves=[],base=0,vel=0,cHover=false,cHold=0,cVisible=true,dragging=false,lastY=0,lastT=0,cLast=performance.now();
+  function measure(){halves=cols.map(function(c){return c.scrollHeight/2})}
+  measure();window.addEventListener('load',measure);
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(measure,200)});
+  function place(){
+    cols.forEach(function(c,i){
+      var h=halves[i];if(!h)return;
+      var y=((base+COL_OFFSET[i]*h)%h+h)%h;
+      c.style.transform='translate3d(0,'+(-y)+'px,0)';
+    });
+  }
+  function colFrame(now){
+    var dt=Math.min((now-cLast)/1000,.1);cLast=now;
+    if(cVisible&&!dragging){
+      if(Math.abs(vel)>1){base+=vel*dt;vel*=Math.pow(.004,dt)}else vel=0;
+      if(!reduce&&!cHover&&now>cHold&&!vel)base+=COL_SPEED*dt;
+    }
+    if(cVisible)place();
+    requestAnimationFrame(colFrame);
+  }
+  collage.addEventListener('mouseenter',function(){cHover=true});
+  collage.addEventListener('mouseleave',function(){cHover=false});
+  collage.addEventListener('wheel',function(e){
+    e.preventDefault();
+    base+=e.deltaY*(e.deltaMode===1?16:1);vel=0;cHold=performance.now()+2500;
+  },{passive:false});
+  collage.addEventListener('pointerdown',function(e){
+    dragging=true;vel=0;lastY=e.clientY;lastT=performance.now();
+    collage.classList.add('dragging');collage.setPointerCapture(e.pointerId);
+  });
+  collage.addEventListener('pointermove',function(e){
+    if(!dragging)return;
+    var now=performance.now(),dy=lastY-e.clientY,dt=Math.max((now-lastT)/1000,.001);
+    base+=dy;vel=Math.max(-1200,Math.min(1200,dy/dt));lastY=e.clientY;lastT=now;
+  });
+  function endDrag(){if(!dragging)return;dragging=false;collage.classList.remove('dragging');cHold=performance.now()+2500;
+    if(performance.now()-lastT>80)vel=0}
+  collage.addEventListener('pointerup',endDrag);
+  collage.addEventListener('pointercancel',endDrag);
+  if('IntersectionObserver' in window)new IntersectionObserver(function(e){cVisible=e[0].isIntersecting;cLast=performance.now()}).observe(collage);
+  requestAnimationFrame(colFrame);
+
+  // Cookie-samtykke. Valget gemmes i localStorage ('all' eller 'necessary').
+  // Analyse/marketing-scripts skal KUN indlaeses naar valget er 'all':
+  //   window.addEventListener('estaire:consent',function(e){ if(e.detail==='all'){ /* indlaes fx analytics her */ } });
+  var KEY='estaire-cookie-consent',banner=document.getElementById('cookie');
+  function getConsent(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+  function applyConsent(v){window.estaireConsent=v;window.dispatchEvent(new CustomEvent('estaire:consent',{detail:v}))}
+  function showBanner(){banner.hidden=false;requestAnimationFrame(function(){banner.classList.add('show')})}
+  function hideBanner(){banner.classList.remove('show');setTimeout(function(){banner.hidden=true},400)}
+  banner.querySelectorAll('[data-consent]').forEach(function(b){b.addEventListener('click',function(){
+    var v=b.getAttribute('data-consent');try{localStorage.setItem(KEY,v)}catch(e){}
+    applyConsent(v);hideBanner();
+  })});
+  document.getElementById('cookie-settings').addEventListener('click',showBanner);
+  var saved=getConsent();
+  if(saved)applyConsent(saved);else setTimeout(showBanner,800);
+
+  // Valuta-vaelger paa priserne. Valget huskes i localStorage.
+  var curBtns=[].slice.call(document.querySelectorAll('.currency button'));
+  function setCurrency(cur){
+    document.querySelectorAll('[data-usd]').forEach(function(el){el.textContent=el.getAttribute('data-'+cur)});
+    curBtns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-cur')===cur?'true':'false')});
+  }
+  curBtns.forEach(function(b){b.addEventListener('click',function(){
+    var cur=b.getAttribute('data-cur');setCurrency(cur);try{localStorage.setItem('estaire-currency',cur)}catch(e){}
+  })});
+  try{var savedCur=localStorage.getItem('estaire-currency');if(savedCur&&/^(usd|eur|dkk)$/.test(savedCur))setCurrency(savedCur)}catch(e){}
+
+  // Reveal on scroll
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

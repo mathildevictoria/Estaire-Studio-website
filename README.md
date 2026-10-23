@@ -1,39 +1,40 @@
 # Estaire Studio
 
-Hjemmeside for Estaire Studio - international AI content studio:
-kampagnevisuals, social content og content-systemer skabt med AI.
+Hjemmeside for Estaire Studio.
 
 ## Opbygning
 
-`index.html` er almindelig, handskrevet HTML - ikke laengere en pakket
-artifact-fil. Teksten staar direkte i markup'en og kan rettes med det samme.
+| Sti | Indhold |
+|---|---|
+| `index.html` | Forsiden paa estairestudio.com. Lige nu en midlertidig "coming soon"-side. |
+| `ai/index.html` | Den tidligere hjemmeside (AI content, video, priser m.m.). Ligger paa estairestudio.com/ai bag password. |
+| `ai/assets/` | Billeder og videoer til /ai. Beskyttet af samme password. |
+| `assets/` | Faelles logo og skrifttyper, som begge sider bruger. |
+| `middleware.js` | Password-beskyttelsen af /ai. Koerer paa Vercels server. |
+| `robots.txt` | Beder soegemaskiner holde sig fra /ai. |
 
-Skrifttypen (Instrument Sans, 400-700) og billeder ligger som
-selvstaendige filer under `assets/`, saa siden henter intet udefra.
+Den tidligere version af forsiden er gemt i git som tagget `site-v1`.
 
-Layoutet er responsivt (mobil, tablet, desktop). Sektioner: hero,
-"In motion" (9:16-karrusel, 15 pladser, uendelig loop), AI content (tekst + billedkollage), services + priser,
-kontakt og footer.
+## Password paa /ai
 
-## Billeder
-
-`assets/img/` indeholder hero-portraettet og fem stills.
-Videoer ligger i `assets/video/` (foerste kort: `seda-barrier-cream.mp4`).
-De oevrige videokort i "In motion" er pladsholdere (`<div class="reel-frame slot">`) -
-erstat dem med `<video>` naar klippene er klar (se kommentaren i markup'en).
+Koden staar ikke i koden (repoet er offentligt). Den saettes i Vercel:
+Project Settings -> Environment Variables -> `AI_PASSWORD`.
+Mangler variablen, er /ai lukket for alle. Skiftes koden, skal man logge ind
+igen. Et login huskes i 30 dage.
 
 ## Lokal visning
 
     python3 -m http.server 4321
 
-Aabn derefter http://localhost:4321
+Aabn http://localhost:4321 (forsiden) og http://localhost:4321/ai/ (den
+tidligere side). Lokalt er der ikke password paa /ai - det findes kun paa Vercel.
 
 ## Deployment
 
 Deployes automatisk via Vercel ved push til `main`.
 Domaener: estairestudio.com og www.estairestudio.com
 
-## Backups
+## Filer der ikke kommer med i git
 
-Tidligere versioner ligger som `index-*-backup.html`. De er git-ignoreret.
-`index-v3-backup.html` er den forrige side med priser, FAQ, process og Calendly.
+Originale, ukomprimerede billeder og videoer (`*-original.*`) og de gamle
+`index-*-backup.html`-filer er git-ignoreret.
