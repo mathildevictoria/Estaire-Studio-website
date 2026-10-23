@@ -10,7 +10,7 @@
   var header=document.querySelector('.header'),menuBtn=document.querySelector('.menu-btn');
   menuBtn.addEventListener('click',function(){
     var open=header.classList.toggle('menu-open');
-    menuBtn.setAttribute('aria-expanded',open);menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');
+    menuBtn.setAttribute('aria-expanded',open);var da=document.documentElement.lang==='da';menuBtn.setAttribute('aria-label',open?(da?'Luk menu':'Close menu'):(da?'Åbn menu':'Open menu'));
   });
   document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){header.classList.remove('menu-open');menuBtn.setAttribute('aria-expanded','false')})});
   window.addEventListener('scroll',function(){header.classList.toggle('scrolled',scrollY>8)},{passive:true});

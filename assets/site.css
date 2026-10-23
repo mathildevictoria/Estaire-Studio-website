@@ -314,3 +314,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .custom-grid p{margin-top:12px;color:var(--muted);font-size:15px}
 .custom .actions{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px}
 @media (max-width:860px){.custom-grid{grid-template-columns:1fr}.custom-grid>div{padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}}
+
+/* ---------- Sprogknap (EN / DA) ---------- */
+.lang-switch{display:inline-flex;align-items:center;gap:8px;font-family:var(--wide);font-stretch:118%;font-weight:500;font-size:11px;letter-spacing:.16em;color:var(--muted)}
+.nav-links .lang-switch a{padding:6px 0;border-bottom:1px solid transparent;color:var(--muted)}
+.nav-links .lang-switch a:hover{color:var(--ink)}
+.nav-links .lang-switch a[aria-current]{color:var(--ink);border-bottom-color:currentColor}
+@media (max-width:860px){.lang-switch{padding:18px 0 4px;font-size:13px;gap:12px}.nav-links .lang-switch a{border-bottom:1px solid transparent;padding:4px 0;font-size:13px}}

@@ -9,6 +9,7 @@ Hjemmeside for Estaire Studio.
 | `index.html` | Forsiden: hero, What we do, Selected work, Packages, How it works, kontakt. |
 | `social-media-management/index.html` | Underside: estairestudio.com/social-media-management/ |
 | `content-creation/index.html` | Underside: estairestudio.com/content-creation/ |
+| `da/` | Den danske version af de tre sider ovenfor (estairestudio.com/da/ ...). Sprogknappen EN / DA i headeren skifter mellem dem. |
 | `assets/site.css`, `assets/site.js` | Faelles design og funktioner (menu, dropdown, cookie-banner) for de tre sider ovenfor. |
 | `assets/img/` | Billeder til de offentlige sider. |
 | `ai/index.html` | Den tidligere hjemmeside (AI content, video, priser m.m.). Ligger paa estairestudio.com/ai bag password. |
